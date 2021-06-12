@@ -2,14 +2,14 @@ package assignment.wuhan_covid.senario.main
 
 import android.location.Location
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.observe
 import assignment.wuhan_covid.R
 import assignment.wuhan_covid.databinding.ActivityMainBinding
-import assignment.wuhan_covid.databinding.MainFragmentBinding
 import assignment.wuhan_covid.senario.module.NaverMapModel
+import com.autocrypt.mi.green.dvr.utils.LogHelper.LogHelper
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.*
 import com.naver.maps.map.util.FusedLocationSource
@@ -53,7 +53,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, NaverMap.OnLocatio
             } else {
                 viewModel.prevPin?.resetPinOverlayImage()
                 it.changeSelectPinOverlayImage()
-
+                LogHelper.showToast("$it")
+                Log.d("dd", it.data.centerType)
                 naverMap.moveCamera(
                     CameraUpdate.scrollAndZoomTo(it.marker.position, 17.0).animate(
                         CameraAnimation.Easing))
@@ -73,11 +74,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, NaverMap.OnLocatio
             locationTrackingMode = LocationTrackingMode.NoFollow
             addOnLocationChangeListener(this@MainActivity)
         }
-    }
-
-
-    private fun setupMap() {
-        NaverMapModel().asyncMap(this, this, R.id.fragment_naver_map)
     }
 
     override fun onLocationChange(p0: Location) {

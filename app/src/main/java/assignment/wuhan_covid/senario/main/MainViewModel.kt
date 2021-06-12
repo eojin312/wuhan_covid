@@ -1,5 +1,6 @@
 package assignment.wuhan_covid.senario.main
 
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -22,6 +23,7 @@ class MainViewModel : ViewModel() {
     fun getCovidList() {
         ServerConnector.getCovidList("1", "100") {
             covidList.value = it
+            Log.d("이어진", "$it")
         }
     }
 

@@ -3,6 +3,7 @@ package assignment.wuhan_covid.senario.module.dataModel
 import assignment.wuhan_covid.R
 import assignment.wuhan_covid.senario.ConstData
 import assignment.wuhan_covid.senario.api.model.Data
+import com.autocrypt.mi.green.dvr.utils.LogHelper.LogHelper
 import com.naver.maps.map.overlay.Marker
 import com.naver.maps.map.overlay.OverlayImage
 
@@ -18,7 +19,7 @@ data class Pin(
             when (data.centerType) {
                 ConstData.centerTypeCenter -> R.drawable.ic_pin_activated
                 ConstData.centerTypeArea -> R.drawable.ic_pin_waiting
-                else -> R.drawable.ic_pin_activated
+                else -> R.drawable.ic_else
             }
         )
         marker.zIndex = 100
@@ -29,7 +30,7 @@ data class Pin(
             when (data.centerType) {
                 ConstData.centerTypeCenter -> R.drawable.ic_pin_select_activated
                 ConstData.centerTypeArea -> R.drawable.ic_pin_select_waiting
-                else -> R.drawable.ic_pin_select_activated
+                else -> R.drawable.ic_else
             }
         )
         marker.zIndex = 1000
