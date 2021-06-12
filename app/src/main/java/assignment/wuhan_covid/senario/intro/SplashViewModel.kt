@@ -34,8 +34,8 @@ class SplashViewModel : ViewModel() {
             AppDatabase.getDatabase(context).apply {
                 var dataList = dataDao().loadAll()
                 Log.d("아아아아", "${dataList.size}")
-                isProgress.value = true
             }
         }
+        isProgress.value = true
     }
 }
