@@ -1,11 +1,16 @@
 package assignment.wuhan_covid.senario.api.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
 data class Data(
     val address: String,
     val centerName: String,
     val centerType: String,
     val createdAt: String,
     val facilityName: String,
+    @PrimaryKey
     val id: Int,
     val lat: String,
     val lng: String,

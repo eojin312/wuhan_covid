@@ -8,5 +8,4 @@ object ConstData {
     const val serviceKey = "bNmSjmL3NWL/mAmsQV0SyDT+8DCdZckhVg5/tSsmJHa47eBZBE+aFvCHYxeM1Dsz2FcgQ64elqYL3mr6GUyjOg=="
     const val centerTypeCenter = "중앙/권역"
     const val centerTypeArea = "지역"
-
 }
