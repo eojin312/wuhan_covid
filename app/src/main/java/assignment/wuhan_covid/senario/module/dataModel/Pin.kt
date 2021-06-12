@@ -18,7 +18,7 @@ data class Pin(
             when (data.centerType) {
                 ConstData.centerTypeCenter -> R.drawable.ic_pin_activated
                 ConstData.centerTypeArea -> R.drawable.ic_pin_waiting
-                else -> R.color.white
+                else -> R.drawable.ic_pin_activated
             }
         )
         marker.zIndex = 100
@@ -29,7 +29,7 @@ data class Pin(
             when (data.centerType) {
                 ConstData.centerTypeCenter -> R.drawable.ic_pin_select_activated
                 ConstData.centerTypeArea -> R.drawable.ic_pin_select_waiting
-                else -> R.color.white
+                else -> R.drawable.ic_pin_select_activated
             }
         )
         marker.zIndex = 1000
